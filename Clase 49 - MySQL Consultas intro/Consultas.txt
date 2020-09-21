@@ -1,0 +1,47 @@
+CREATE TABLE bandas(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR (60)  NOT NULL,
+    	integrantes INT NOT NULL,
+   	fecha_inicio date NOT NULL,
+    	fecha_separacion date,
+    	pais VARCHAR (60)  NOT NULL,
+);
+CREATE TABLE canciones(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR (60)  NOT NULL,
+    	duracion INT NOT NULL,
+    	album INT NOT NULL,
+    	banda INT NOT NULL,
+    	fecha_publicacion DATE NOT NULL
+);
+CREATE TABLE albumes(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nombre_album VARCHAR (60)  NOT NULL,
+    	duracion INT NOT NULL,
+    	banda INT NOT NULL,
+    	fecha_publicacion DATE NOT NULL
+);
+
+INSERT into bandas (nombre, integrantes, fecha_inicio, fecha_separacion, pais) 
+    VALUES ("Pinion Fijo", 1, 1999, null, "Argentina");
+    
+INSERT into bandas (nombre, integrantes, fecha_inicio, fecha_separacion, pais) 
+    VALUES ("Backstreet Boys", 5, 1991, null, "USA"); 
+    
+INSERT into canciones (nombre, duracion, album, banda, fecha_publicacion)
+    VALUES ("Everybody", 125, "Backstreet's Back", "Backstreet Boys", 1997); 
+
+INSERT into canciones (nombre, duracion, album, banda, fecha_publicacion)
+    VALUES ("I want it that way", 145, "Millennium", "Backstreet Boys", 1999); 
+    
+INSERT into canciones (nombre, duracion, album, banda, fecha_publicacion)
+    VALUES ("Chu chu wa", 125, "El primer album", "Pinion Fijo", 2005); 
+    
+INSERT into canciones (nombre, duracion, album, banda, fecha_publicacion)
+    VALUES ("Hola chicos", 105, "El primer album", "Pinion Fijo", 2005); 
+    
+INSERT into albumes (nombre_album, duracion, banda, fecha_publicacion)
+	VALUES ("Millennium", 859,  "Backstreet Boys", 1999);
+
+INSERT into albumes (nombre_album, duracion, banda, fecha_publicacion)
+	VALUES ("El primer album", 526, "Pinion Fijo", 2005);
