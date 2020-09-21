@@ -1,0 +1,7 @@
+SELECT personas.nombre,
+ personas.apellido,
+ provincias.nombre AS provincia,
+ paises.nombre AS pais
+FROM personas
+  JOIN provincias ON personas.id_provincia = provincias.id
+  JOIN paises ON provincias.id_pais = paises.id
